@@ -1,9 +1,10 @@
 class Solution(object):
+
     def merge(self, intervals):
         intervals.sort(key=lambda x: x.start)
-        
+
         res = []
-        
+
         for interval in intervals:
             if not res:
                 res.append(interval)
@@ -14,5 +15,5 @@ class Solution(object):
                         last.end = interval.end
                 else:
                     res.append(interval)
-                    
+
         return res

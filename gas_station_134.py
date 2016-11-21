@@ -7,26 +7,26 @@ ass Solution(object):
         """
         if sum(cost) > sum(gas):
             return -1
-        
+
         N = len(gas)
         i = 0
         seen = 0
         tank = 0
         ans = 0
-        
+
         while seen < N:
             tank += gas[i]
             tank -= cost[i]
-            
+
             i += 1
             seen += 1
-            
+
             if tank < 0:
                 tank = 0
                 seen = 0
                 ans = i
-            
+
             if i == N:
                 i = 0
-                
+
         return ans

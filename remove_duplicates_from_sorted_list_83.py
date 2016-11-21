@@ -1,8 +1,9 @@
 class Solution(object):
+
     def deleteDuplicates(self, head):
         last = None
         headRef = head
-        
+
         while head:
             if not last:
                 last = head
@@ -11,8 +12,7 @@ class Solution(object):
                     last.next = head.next
                 else:
                     last = head
-                    
+
             head = head.next
-                    
+
         return headRef
-        

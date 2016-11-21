@@ -1,4 +1,5 @@
 class Solution(object):
+
     def circularArrayLoop(self, nums):
         """
         :type nums: List[int]
@@ -6,7 +7,7 @@ class Solution(object):
         """
         N = len(nums)
         seen = [False for i in range(N)]
-        
+
         for i in range(N):
             if not seen[i]:
                 seen[i] = True
@@ -17,13 +18,13 @@ class Solution(object):
 
                 while ((nums[(cur + nums[cur]) % N] > 0) == (nums[start] > 0)):
                     cur = (cur + nums[cur]) % N
-                    
+
                     if length > 1 and cur == start:
                         return True
                     elif seen[cur]:
                         break
-                    
+
                     seen[cur] = True
                     length += 1
-                        
+
         return False

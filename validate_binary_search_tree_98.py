@@ -5,7 +5,9 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution(object):
+
     def isValidBST(self, root):
         """
         :type root: TreeNode
@@ -13,11 +15,12 @@ class Solution(object):
         """
         return self.isValidBSTHelper(root, float('-inf'), float('inf'))
 
-
     def isValidBSTHelper(self, root, low, hi):
         if not root:
             return True
         elif root.val <= low or root.val >= hi:
             return False
         else:
-            return self.isValidBSTHelper(root.left, low, root.val) and self.isValidBSTHelper(root.right, root.val, hi)
+            return self.isValidBSTHelper(
+                root.left, low, root.val) and self.isValidBSTHelper(
+                root.right, root.val, hi)

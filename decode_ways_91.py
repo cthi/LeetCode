@@ -1,4 +1,5 @@
 class Solution(object):
+
     def numDecodings(self, s):
         """
         :type s: str
@@ -32,11 +33,10 @@ class Solution(object):
             23: 'W',
             24: 'X',
             25: 'Y',
-            26: 'Z' 
+            26: 'Z'
         }
 
         return self._numDecodings(0, s, ht, {})
-
 
     def _numDecodings(self, cur, s, ht, memo):
         if cur in memo:
@@ -47,12 +47,12 @@ class Solution(object):
             return 0
         elif s[cur] == '1' or s[cur] == '2':
             decodings = self._numDecodings(cur + 1, s, ht, memo)
-        
+
             if cur != len(s) - 1 and (s[cur] == '1' or (s[cur + 1] != '7' and s[cur + 1] != '8' and s[cur + 1] != '9')):
-                decodings += self._numDecodings(cur + 2, s , ht, memo)
-              
+                decodings += self._numDecodings(cur + 2, s, ht, memo)
+
             memo[cur] = decodings
-            
+
             return decodings
         else:
-            return self._numDecodings(cur + 1, s, ht, memo) 
+            return self._numDecodings(cur + 1, s, ht, memo)

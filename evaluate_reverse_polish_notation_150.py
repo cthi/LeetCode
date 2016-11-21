@@ -1,7 +1,8 @@
 class Solution(object):
+
     def evalRPN(self, tokens):
         stack = []
-        
+
         for token in tokens:
             if not self.isOp(token):
                 stack.append(token)
@@ -12,17 +13,15 @@ class Solution(object):
                 stack.append(str(self.eval(l, r, op)))
 
         return int(stack[-1])
-        
-        
+
     def isOp(self, token):
         return token == '+' or token == '-' or token == '*' or token == '/'
-        
-        
+
     def eval(self, l, r, op):
         print(l, r, op)
         l = int(l)
         r = int(r)
-        
+
         if op == '+':
             return l + r
         elif op == '-':
@@ -34,4 +33,3 @@ class Solution(object):
                 return - (abs(l) // abs(r))
             else:
                 return l // r
-            
