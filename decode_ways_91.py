@@ -48,7 +48,8 @@ class Solution(object):
         elif s[cur] == '1' or s[cur] == '2':
             decodings = self._numDecodings(cur + 1, s, ht, memo)
 
-            if cur != len(s) - 1 and (s[cur] == '1' or (s[cur + 1] != '7' and s[cur + 1] != '8' and s[cur + 1] != '9')):
+            if cur != len(s) - 1 and (s[cur] == '1' or (s[cur + 1]
+                                                        != '7' and s[cur + 1] != '8' and s[cur + 1] != '9')):
                 decodings += self._numDecodings(cur + 2, s, ht, memo)
 
             memo[cur] = decodings

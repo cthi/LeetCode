@@ -5,7 +5,9 @@ import heapq
 #         self.val = x
 #         self.next = None
 
+
 class Solution(object):
+
     def mergeKLists(self, lists):
         """
         :type lists: List[ListNode]
@@ -14,14 +16,14 @@ class Solution(object):
         heap = []
         head = None
         node = None
-        
+
         for node in lists:
             if node:
                 heapq.heappush(heap, (node.val, node))
-            
+
         while heap:
             (val, nextNode) = heapq.heappop(heap)
-            
+
             if nextNode.next:
                 heapq.heappush(heap, (nextNode.next.val, nextNode.next))
 
@@ -30,5 +32,5 @@ class Solution(object):
             else:
                 node.next = nextNode
             node = nextNode
-            
+
         return head

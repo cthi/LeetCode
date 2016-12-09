@@ -9,7 +9,8 @@ class Solution(object):
     def fpe(self, start, end, nums):
         middle = (start + end) // 2
 
-        if (middle == 0 and nums[middle] > nums[middle + 1]) or (middle == len(nums) - 1 and nums[middle] > nums[middle - 1]):
+        if (middle == 0 and nums[middle] > nums[
+                middle + 1]) or (middle == len(nums) - 1 and nums[middle] > nums[middle - 1]):
             return middle
         elif nums[middle] > nums[middle + 1] and nums[middle] > nums[middle - 1]:
             return middle

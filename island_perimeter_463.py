@@ -1,14 +1,15 @@
 class Solution(object):
+
     def islandPerimeter(self, grid):
         """
         :type grid: List[List[int]]
         :rtype: int
         """
-        
+
         N = len(grid)
         M = len(grid[0])
         perimeter = 0
-        
+
         for i in range(N):
             for j in range(M):
                 if grid[i][j] == 1:

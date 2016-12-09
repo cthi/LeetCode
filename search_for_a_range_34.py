@@ -1,4 +1,5 @@
 class Solution(object):
+
     def searchRange(self, nums, target):
         """
         :type nums: List[int]
@@ -7,23 +8,22 @@ class Solution(object):
         """
         left = self.bsl(0, len(nums) - 1, nums, target, -1)
         right = self.bsr(0, len(nums) - 1, nums, target, -1)
-        
+
         return [left, right]
-        
+
     def bsl(self, start, end, nums, target, left):
         if start > end:
             return left
         else:
             mid = (start + end) // 2
-            
+
             if nums[mid] > target:
                 return self.bsl(start, mid - 1, nums, target, left)
             elif nums[mid] < target:
                 return self.bsl(mid + 1, end, nums, target, left)
             else:
                 return self.bsl(start, mid - 1, nums, target, mid)
-                
-    
+
     def bsr(self, start, end, nums, target, right):
         if start > end:
             return right
