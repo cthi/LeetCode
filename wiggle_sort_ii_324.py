@@ -6,7 +6,7 @@ class Solution(object):
         """
         N = len(nums)
         nums.sort()
-        
+
         if N % 2 == 0:
             mid = N // 2
         else:
