@@ -29,11 +29,11 @@ class Solution(object):
                     op = input[i]
 
                     if op == '+':
-                        opFunc = lambda x, y: x + y
+                        def opFunc(x, y): return x + y
                     elif op == '-':
-                        opFunc = lambda x, y: x - y
+                        def opFunc(x, y): return x - y
                     else:
-                        opFunc = lambda x, y: x * y
+                        def opFunc(x, y): return x * y
 
                     for k in left:
                         for j in right:
